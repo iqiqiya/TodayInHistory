@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mainBg">
+
+    <TextView
+        android:id="@+id/main_header_tv_yangli"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:padding="3dp"
+        android:text="公历2019年11月14日 星期四(阳历)"/>
+
+    <TextView
+        android:id="@+id/main_header_tv_day"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="80sp"
+        android:text="14"
+        android:textColor="@color/fireRed"/>
+
+    <TextView
+        android:id="@+id/main_header_tv_week"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/fireRed"
+        android:textStyle="bold"
+        android:textSize="26sp"
+        android:text="星期四"/>
+
+    <TextView
+        android:id="@+id/main_header_tv_nongli"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="3dp"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:text="农历猪年十月十八(阴历)"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="20dp"
+        android:padding="10dp"
+        android:background="@drawable/headerbg">
+
+        <TextView
+            android:id="@+id/main_header_tv_baiji"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="14sp"
+            android:text="彭祖百忌："/>
+
+        <TextView
+            android:id="@+id/main_header_tv_wuxing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="五行："/>
+
+        <TextView
+            android:id="@+id/main_header_tv_chongsha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:textSize="14sp"
+            android:text="冲煞："/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/fireRed"/>
+
+        <TextView
+            android:id="@+id/main_header_tv_jishen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="14sp"
+            android:text="吉神趋益："/>
+
+        <TextView
+            android:id="@+id/main_header_tv_xiongshen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:textSize="14sp"
+            android:text="凶神趋忌："/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/fireRed"/>
+
+        <TextView
+            android:id="@+id/main_header_tv_yi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="14sp"
+            android:text="宜："/>
+
+        <TextView
+            android:id="@+id/main_header_tv_ji"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:textSize="14sp"
+            android:text="忌："/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/main_header_tv_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="历史上的这一天"
+        android:layout_marginLeft="20dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        />
+
+
+</LinearLayout>
