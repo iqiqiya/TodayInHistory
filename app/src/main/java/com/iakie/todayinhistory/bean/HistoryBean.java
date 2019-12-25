@@ -133,5 +133,6 @@ public class HistoryBean implements Serializable {
 
     // http://api.juheapi.com/japi/toh?key=您申请的KEY&v=1.0&month=11&day=1
     // http://api.juheapi.com/japi/toh?v=1.0&day=14&key=6a877b186ccd134296d131183b74c9f4
-    //http://api.juheapi.com/japi/toh?key=6a877b186ccd134296d131183b74c9f4&month=11&day=1
+    // http://api.juheapi.com/japi/toh?key=6a877b186ccd134296d131183b74c9f4&month=11&day=1
+    // http://api.juheapi.com/japi/tohdet?key=6a877b186ccd134296d131183b74c9f4&v=1.0&id=1630115
 }

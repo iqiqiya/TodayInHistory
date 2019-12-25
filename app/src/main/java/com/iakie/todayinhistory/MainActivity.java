@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.DatePicker;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -67,6 +68,17 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
 
         String todayHistoryURl = ContentURL.getTodayHistory("1.0", month, day);
         loadData(todayHistoryURl);
+
+        mainLv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(MainActivity.this,HistoryDescActivity.class);
+                HistoryBean.ResultBean resultBean = mDatas.get(position);
+                String bean_id = resultBean.get_id();
+                intent.putExtra("hisId",bean_id);
+                startActivity(intent);
+            }
+        });
     }
 
     private void addHeaderAndFooterView() {
