@@ -2,10 +2,13 @@ package com.iakie.todayinhistory;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.DatePicker;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -34,6 +37,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     private HistoryAdapter adapter;
     private Calendar calendar;
     private Date date;
+
+    HistoryBean historyBean;
+
     // 声明头布局当中的TextView
     TextView yinliTv,dayTv,weekTv,yangliTv,baijiTv,wuxingTv,chongshaTv,jishenTv,xiongshenTv,yiTv,jiTv;
 
@@ -70,6 +76,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         mainLv.addHeaderView(headerView);
 
         View footerView = LayoutInflater.from(this).inflate(R.layout.main_footer,null);
+        footerView.setTag("footer");
+        footerView.setOnClickListener(this);
         mainLv.addFooterView(footerView);
     }
 
@@ -151,7 +159,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     @Override
     public void onSuccess(String result) {
         mDatas.clear();
-        HistoryBean historyBean = new Gson().fromJson(result, HistoryBean.class);
+        historyBean = new Gson().fromJson(result, HistoryBean.class);
         List<HistoryBean.ResultBean> list = historyBean.getResult();
         for (int i = 0; i < 5; i++) {
             mDatas.add(list.get(i));
@@ -160,10 +168,40 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     }
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.main_imgbtn:
 
-                break;
+        if (v.getId() == R.id.main_imgbtn) {
+            popCalendarDialog();
+            return;
         }
+        String tag = (String) v.getTag();
+        if (tag.equals("footer")) {
+            Intent intent = new Intent(this,HistoryActivity.class);
+
+            if (historyBean != null) {
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("history",historyBean);
+                intent.putExtras(bundle);
+            }
+            startActivity(intent);
+        }
+    }
+
+    private void popCalendarDialog() {
+        // 弹出日历对话框
+        Calendar calendar = Calendar.getInstance();
+        DatePickerDialog dialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                // 改变老黄历显示的内容
+                String time = year+"-"+(month+1)+"-"+dayOfMonth;
+                String laohuangliURL = ContentURL.getLaohuangliURL(time);
+                loadHeaderData(laohuangliURL);
+
+                // 改变历史上的今天的数据
+                String todayHistoryURL = ContentURL.getTodayHistory("1.0",(month+1),dayOfMonth);
+                loadHeaderData(laohuangliURL);
+            }
+        }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH));
+        dialog.show();
     }
 }
