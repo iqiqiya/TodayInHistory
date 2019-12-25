@@ -199,7 +199,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
 
                 // 改变历史上的今天的数据
                 String todayHistoryURL = ContentURL.getTodayHistory("1.0",(month+1),dayOfMonth);
-                loadHeaderData(laohuangliURL);
+                loadData(todayHistoryURL);
             }
         }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH));
         dialog.show();
