@@ -4,6 +4,7 @@ package="com.iakie.todayinhistory">
 
 <uses-permission android:name="android.permission.INTERNET"/>
 <application
+    android:name=".base.UniteApp"
     android:allowBackup="true"
     android:icon="@mipmap/icon"
     android:label="@string/app_name"
