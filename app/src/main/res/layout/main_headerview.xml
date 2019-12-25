@@ -13,7 +13,7 @@
         android:textSize="18sp"
         android:gravity="center"
         android:padding="3dp"
-        android:text="公历2019年11月14日 星期四(阳历)"/>
+        android:text=""/>
 
     <TextView
         android:id="@+id/main_header_tv_day"
@@ -22,7 +22,7 @@
         android:gravity="center"
         android:textStyle="bold"
         android:textSize="80sp"
-        android:text="14"
+        android:text=""
         android:textColor="@color/fireRed"/>
 
     <TextView
@@ -33,7 +33,7 @@
         android:textColor="@color/fireRed"
         android:textStyle="bold"
         android:textSize="26sp"
-        android:text="星期四"/>
+        android:text=""/>
 
     <TextView
         android:id="@+id/main_header_tv_nongli"
@@ -44,7 +44,7 @@
         android:layout_marginTop="10dp"
         android:textStyle="bold"
         android:textSize="18sp"
-        android:text="农历猪年十月十八(阴历)"/>
+        android:text=""/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -60,14 +60,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:textSize="14sp"
-            android:text="彭祖百忌："/>
+            android:text=""/>
 
         <TextView
             android:id="@+id/main_header_tv_wuxing"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="14sp"
-            android:text="五行："/>
+            android:text=""/>
 
         <TextView
             android:id="@+id/main_header_tv_chongsha"
@@ -75,7 +75,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:textSize="14sp"
-            android:text="冲煞："/>
+            android:text=""/>
 
 
         <TextView
@@ -89,7 +89,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:textSize="14sp"
-            android:text="吉神趋益："/>
+            android:text=""/>
 
         <TextView
             android:id="@+id/main_header_tv_xiongshen"
@@ -97,7 +97,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:textSize="14sp"
-            android:text="凶神趋忌："/>
+            android:text=""/>
 
         <TextView
             android:layout_width="match_parent"
@@ -110,7 +110,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:textSize="14sp"
-            android:text="宜："/>
+            android:text=""/>
 
         <TextView
             android:id="@+id/main_header_tv_ji"
@@ -118,14 +118,14 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:textSize="14sp"
-            android:text="忌："/>
+            android:text=""/>
     </LinearLayout>
 
     <TextView
         android:id="@+id/main_header_tv_history"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="历史上的这一天"
+        android:text=""
         android:layout_marginLeft="20dp"
         android:textSize="18sp"
         android:textStyle="bold"
